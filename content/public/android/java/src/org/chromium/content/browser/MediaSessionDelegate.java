@@ -51,7 +51,7 @@ public class MediaSessionDelegate implements AudioManager.OnAudioFocusChangeList
 
     @CalledByNative
     private void tearDown() {
-        abandonAudioFocus();
+        //abandonAudioFocus();
         mNativeMediaSessionDelegateAndroid = 0;
     }
 
@@ -65,7 +65,7 @@ public class MediaSessionDelegate implements AudioManager.OnAudioFocusChangeList
     @CalledByNative
     private void abandonAudioFocus() {
         AudioManager am = (AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE);
-        am.abandonAudioFocus(this);
+        //am.abandonAudioFocus(this);
     }
 
     private boolean requestAudioFocusInternal() {

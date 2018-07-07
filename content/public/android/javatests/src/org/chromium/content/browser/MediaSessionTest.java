@@ -64,8 +64,9 @@ public class MediaSessionTest extends ContentShellTestBase {
         }
 
         public void abandonAudioFocus() {
-            getAudioManager().abandonAudioFocus(this);
+            /*getAudioManager().abandonAudioFocus(this);
             mAudioFocusState = AudioManager.AUDIOFOCUS_LOSS;
+            */
         }
 
         public void waitForFocusStateChange(int focusType) throws InterruptedException {
@@ -96,7 +97,7 @@ public class MediaSessionTest extends ContentShellTestBase {
 
     @Override
     public void tearDown() throws Exception {
-        mAudioFocusChangeListener.abandonAudioFocus();
+       // mAudioFocusChangeListener.abandonAudioFocus();
 
         super.tearDown();
     }
@@ -337,7 +338,7 @@ public class MediaSessionTest extends ContentShellTestBase {
         assertFalse(DOMUtils.isMediaPaused(getWebContents(), LONG_AUDIO));
         assertFalse(DOMUtils.isMediaPaused(getWebContents(), LONG_VIDEO));
 
-        mAudioFocusChangeListener.abandonAudioFocus();
+        //mAudioFocusChangeListener.abandonAudioFocus();
         assertEquals(AudioManager.AUDIOFOCUS_LOSS,
                 mAudioFocusChangeListener.getAudioFocusState());
 
@@ -363,14 +364,14 @@ public class MediaSessionTest extends ContentShellTestBase {
         // Wait for the media to be really playing.
         mAudioFocusChangeListener.waitForFocusStateChange(AudioManager.AUDIOFOCUS_LOSS);
 
-        mAudioFocusChangeListener.requestAudioFocus(AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
+        //mAudioFocusChangeListener.requestAudioFocus(AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
         assertEquals(AudioManager.AUDIOFOCUS_GAIN_TRANSIENT,
                 mAudioFocusChangeListener.getAudioFocusState());
 
         DOMUtils.waitForMediaPauseBeforeEnd(getWebContents(), LONG_AUDIO);
         DOMUtils.waitForMediaPauseBeforeEnd(getWebContents(), LONG_VIDEO);
 
-        mAudioFocusChangeListener.abandonAudioFocus();
+        //mAudioFocusChangeListener.abandonAudioFocus();
 
         DOMUtils.waitForMediaPlay(getWebContents(), LONG_AUDIO);
         DOMUtils.waitForMediaPlay(getWebContents(), LONG_VIDEO);

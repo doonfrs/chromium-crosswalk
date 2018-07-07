@@ -110,7 +110,7 @@ public class AudioFocusGrabberListenerService extends Service {
     void releaseAndAbandonAudioFocus() {
         mMediaPlayer.release();
         mMediaPlayer = null;
-        mAudioManager.abandonAudioFocus(mOnAudioFocusChangeListener);
+        //mAudioManager.abandonAudioFocus(mOnAudioFocusChangeListener);
     }
 
     MediaPlayer.OnCompletionListener mOnCompletionListener =

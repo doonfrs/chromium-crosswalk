@@ -90,7 +90,7 @@ public class CastNotificationControl implements MediaRouteController.UiListener,
     public void hide() {
         mIsShowing = false;
         MediaNotificationManager.hide(Tab.INVALID_TAB_ID, R.id.remote_notification);
-        mAudioManager.abandonAudioFocus(this);
+        //mAudioManager.abandonAudioFocus(this);
         mMediaRouteController.removeUiListener(this);
     }
 

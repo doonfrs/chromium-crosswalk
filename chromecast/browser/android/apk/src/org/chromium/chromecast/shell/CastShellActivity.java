@@ -214,9 +214,9 @@ public class CastShellActivity extends Activity {
 
         // Release the audio focus. Note that releasing audio focus does not stop audio playback,
         // it just notifies the framework that this activity has stopped playing audio.
-        if (mAudioManager.abandonAudioFocus(null) != AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
+        /*if (mAudioManager.abandonAudioFocus(null) != AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
             Log.e(TAG, "Failed to abandon audio focus");
-        }
+        }*/
 
         ContentViewCore view = getActiveContentViewCore();
         if (view != null) view.onHide();
