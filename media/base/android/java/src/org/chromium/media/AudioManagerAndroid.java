@@ -302,6 +302,7 @@ class AudioManagerAndroid implements AudioManager.OnAudioFocusChangeListener{
      */
     @CalledByNative
     private void setCommunicationAudioModeOn(boolean on) {
+        /*
         checkIfCalledOnValidThread();
         if (DEBUG) logd("setCommunicationAudioModeOn" + on + ")");
         if (!mIsInitialized) return;
@@ -345,6 +346,7 @@ class AudioManagerAndroid implements AudioManager.OnAudioFocusChangeListener{
         }
 
         setCommunicationAudioModeOnInternal(on);
+        */
     }
 
     /**

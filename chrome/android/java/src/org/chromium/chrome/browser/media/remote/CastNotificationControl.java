@@ -98,8 +98,8 @@ public class CastNotificationControl implements MediaRouteController.UiListener,
         mMediaRouteController.addUiListener(this);
         // TODO(aberent): investigate why this is necessary, and whether we are handling
         // it correctly. Also add code to restore it when Chrome is resumed.
-        mAudioManager.requestAudioFocus(this, AudioManager.USE_DEFAULT_STREAM_TYPE,
-                AudioManager.AUDIOFOCUS_GAIN);
+        //mAudioManager.requestAudioFocus(this, AudioManager.USE_DEFAULT_STREAM_TYPE,
+        //       AudioManager.AUDIOFOCUS_GAIN);
         Intent contentIntent = new Intent(mContext, ExpandedControllerActivity.class);
         contentIntent.putExtra(MediaNotificationUma.INTENT_EXTRA_NAME,
                 MediaNotificationUma.SOURCE_MEDIA_FLING);

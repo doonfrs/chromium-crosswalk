@@ -200,11 +200,12 @@ public class CastShellActivity extends Activity {
         if (view != null) view.onShow();
 
         // Request audio focus so any other audio playback doesn't continue in the background.
-        if (mAudioManager.requestAudioFocus(
+        /*if (mAudioManager.requestAudioFocus(
                 null, AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN)
                 != AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
             Log.e(TAG, "Failed to obtain audio focus");
         }
+        */
     }
 
     @Override
