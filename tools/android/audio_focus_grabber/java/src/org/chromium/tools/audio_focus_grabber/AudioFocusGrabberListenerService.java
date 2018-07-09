@@ -88,8 +88,7 @@ public class AudioFocusGrabberListenerService extends Service {
 
 
     void gainFocusAndPlay(int focusType) {
-        playSound();
-/*        int result = mAudioManager.requestAudioFocus(
+        int result = mAudioManager.requestAudioFocus(
                 mOnAudioFocusChangeListener,
                 AudioManager.STREAM_MUSIC,
                 focusType);
@@ -98,7 +97,6 @@ public class AudioFocusGrabberListenerService extends Service {
         } else {
             Log.i(TAG, "cannot request audio focus");
         }
-        */
     }
 
     void playSound() {
@@ -110,7 +108,7 @@ public class AudioFocusGrabberListenerService extends Service {
     void releaseAndAbandonAudioFocus() {
         mMediaPlayer.release();
         mMediaPlayer = null;
-        //mAudioManager.abandonAudioFocus(mOnAudioFocusChangeListener);
+        mAudioManager.abandonAudioFocus(mOnAudioFocusChangeListener);
     }
 
     MediaPlayer.OnCompletionListener mOnCompletionListener =
